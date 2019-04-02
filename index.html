@@ -22,16 +22,22 @@
 				</article>
 			</article>
 			<div>
-				<nav id="switch">
-					<div class="active">EN</div>
-					<div>FR</div>
-					<div>GM</div>
-				</nav>
-				<nav id="switch">
-					<div class="active">$</div>
-					<div>€</div>
-					<div>£</div>
-				</nav>
+				<form>
+					<input type="radio" id="EN" name="language-group" checked>
+					<label for="EN">EN</label>
+					<input type="radio" id="FR" name="language-group">
+					<label for="FR">FR</label>
+					<input type="radio" id="GM" name="language-group">
+					<label for="GM">GM</label>
+				</form>
+				<form>
+					<input type="radio" id="$" name="currency-group" checked>
+					<label for="$">$</label>
+					<input type="radio" id="€" name="currency-group">
+					<label for="€">€</label>
+					<input type="radio" id="£" name="currency-group">
+					<label for="£">£</label>
+				</form>
 			</div>
 		</section>
 		<section class="bottom">

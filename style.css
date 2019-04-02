@@ -83,16 +83,25 @@ header section.top nav{
 	display: flex;
 	margin-left: 25px; 
 }
-header section.top nav div{
+header section.top form{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	margin-left: 25px; 
+}
+header section.top form label{
 	cursor: pointer;
 	padding: 20px 10px 10px;
 	margin: 0 1px;
 	background: #e6e9ed;
 }
-header section.top nav div:hover{
+header section.top form [type="radio"]:not(:checked) + label:hover{
 	background: #d5e4f1;
 }
-header section.top nav div.active{
+header section.top form [type="radio"]{
+	display: none;
+}
+header section.top form [type="radio"]:checked + label{
 	background: #59b7c2;
 	color: #fff;
 }

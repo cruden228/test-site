@@ -1,28 +1,3 @@
-// on / off switch
-
-document.addEventListener("click", (event) => {
-	let buttonsSwitch = event.target;
-
-	while(buttonsSwitch.id !== "switch"){
-		if(buttonsSwitch === document) break 
-		buttonsSwitch = buttonsSwitch.parentNode;
-	}
-	if( buttonsSwitch.id !== "switch" || 
-		event.target.classList.contains("active") || 
-		event.target === buttonsSwitch ) return
-
-	let divActive = buttonsSwitch.getElementsByClassName('active')[0];
-
-	if(!divActive){
-		event.target.classList.add("active"); 
-		return
-	}
-
-	divActive.classList.remove("active");
-	event.target.classList.add("active");
-},false);
-
-
 //to show cart
 
 const basketElem = document.getElementById("basketId");
