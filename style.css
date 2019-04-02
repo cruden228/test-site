@@ -1,0 +1,684 @@
+/*
+font-family: 'Bitter', serif;
+font-family: Segoe UI;
+*/
+*{
+	margin: 0;
+	padding: 0;
+}
+a{
+	color: #59b7c2;
+	text-decoration: none;
+	cursor: pointer;
+}
+button:focus,
+input:focus,
+select:focus {
+    outline: none;
+}
+body{
+	min-width: 1200px;
+	position: relative;
+}
+/*985...1000*/
+header{
+	font-size: 11px;
+	font-family: Segoe UI;
+}
+header .line{
+	position: absolute;
+	height: 3px;
+	width: 100%;
+	background: #7fcbce;
+	border-top: 3px solid #59b7c2;
+	border-bottom: 3px solid #aadce0;
+}
+header section.top{
+	height: 45px;
+	display: flex;
+    justify-content: space-between;
+    background: #f5f7f9;
+    padding: 0 9%;
+}
+header section.top > article{
+	display: flex;
+}
+header section.top article article:first-child{
+	width: 250px;
+}
+header section.top article article,
+header section.top > div{
+    display: flex;
+    align-items: center;
+}
+header section.top article article{
+	margin-top: 20px;
+	padding-bottom: 10px;
+}
+header section.top article article:last-child{
+	font-family: 'Bitter', serif;
+	font-size: 12px;
+	color: #777777;
+}
+header section.top .header_call{
+	display: flex;
+    align-items: flex-start;
+}
+header section.top .header_call div{
+	margin-left: 8px;
+}
+header section.top nav{
+	display: flex;
+	margin-left: 25px; 
+}
+header section.top nav div{
+	cursor: pointer;
+	padding: 20px 10px 10px;
+	margin: 0 1px;
+	background: #e6e9ed;
+}
+header section.top nav div:hover{
+	background: #d5e4f1;
+}
+header section.top nav div.active{
+	background: #59b7c2;
+	color: #fff;
+}
+header section.bottom{
+	display: flex;
+    justify-content: space-between;
+    padding: 35px 9%;
+}
+header section.bottom > article{
+	display: flex;
+}
+header section.bottom article article:first-child{
+	width: 250px;
+}
+header section.bottom .logo div{
+	margin-left: 20px;
+	color: #c3c3c3;
+}
+header section.bottom .search{
+	position: relative;
+	margin-top: 15px;
+}
+header section.bottom .search img{
+	position: absolute;
+	top:11px;
+	right: 10px;
+}
+header section.bottom input{
+	border:1px solid #cccccc;
+	border-radius: 2px;
+	padding: 10px;
+	padding-right: 20px;
+	display: flex; 
+	width: 225px;
+	font-size:12px;
+}
+header section.bottom input:focus{
+	color: #777777;
+	border:1px solid #59b7c2;
+}
+header section.bottom nav{
+	display: flex;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	margin: 15px 0px;
+}
+header section.bottom nav > div{
+	margin: 0 1px;
+	padding: 10px 0;
+	cursor: pointer;
+	font-family: 'Bitter', serif;
+	font-size: 12px;
+}
+header section.bottom nav > div:not(:last-child):hover{
+	background: #59b7c2;
+}
+header section.bottom nav div span{
+	padding: 0px 10px;
+	border-right: 1px solid #cccccc; 
+}
+header section.bottom nav div:nth-last-child(2) span,
+header section.bottom nav div:nth-last-child(1) span{
+	border:none;
+}
+header section.bottom nav .basket > span{
+	background: #f1f3f5;
+	padding: 10px;
+	cursor: pointer;
+}
+header section.bottom nav .basket{
+	cursor: context-menu;
+	position: relative;
+}
+header section.bottom nav .basket:hover span{
+	background: #59b7c2;
+	color: white;
+}
+.cart_items{
+    position: absolute;
+    top: 36px;
+    right: 0;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+	display: none;
+    font-family: Segoe UI;
+    z-index: 999;
+}
+.cart_items .header{
+	font-family: 'Bitter', serif;
+	font-size: 13px;
+	padding: 20px;
+}
+.cart_items .main{
+	font-size: 12px;
+	padding: 0 20px 20px 20px;
+}
+.cart_items .main .product_cart{
+	display: flex;
+}
+.cart_items .main .product_cart .img{
+	width: 25%;
+}
+.cart_items .main .product_cart .img img{
+	width: 100%
+}
+.cart_items .main .product_cart .info{
+	position: relative;
+	width: 75%;
+}
+.cart_items .main .product_cart .info .title{
+	width: 80%;
+}
+.cart_items .main .product_cart .info .cost{
+	padding-top: 10px; 
+	font-family: 'Bitter', serif;
+	font-size: 12px;
+}
+.cart_items .main .product_cart .info .del{
+    position: absolute;
+    top: -4px;
+    right: 0;
+    padding: 5px;
+    cursor: pointer;
+}
+.cart_items .main .product_cart:not(:last-child){
+	padding-bottom: 5px; 
+	margin-bottom: 5px;
+	border-bottom: 1px solid #f0f0f0; 
+}
+.cart_items .footer{
+	padding: 0 20px 20px 20px;
+}
+.cart_items .footer button{
+	padding: 10px;
+	color: white;
+	font-size: 11px;
+	border: none;
+	font-family: Segoe UI;
+	cursor: pointer;
+}
+.cart_items .footer button:first-child{
+	background: #59b7c2;
+	margin-right: 10px;
+}
+.cart_items .footer button:last-child{
+	background: #444444;
+}
+header > nav.manu{
+	font-size: 14px;
+	margin: 0px 9%;
+	display: flex;
+	background: #f5f7f9;
+	font-family: 'Bitter', serif;
+	font-size: 14px;
+}
+header nav.manu > div{
+	position: relative;
+	cursor: pointer;
+	padding: 20px;
+	text-transform: uppercase;
+}
+header nav.manu > div:not(.active):hover{
+	background: #d5e4f1;
+}
+header nav.manu div.active{
+	background: #78c4cd;
+	color: #fff;
+}
+header nav.manu nav.submenu_items{
+	position: absolute;
+    top: 57px;
+    left: 0;
+    width: 230%;
+    background: #ffffff;
+    display: none;
+    border: 1px solid #e0e0e0;
+    font-size: 13px;
+    z-index: 999;
+}
+header nav.manu nav.submenu_items div{
+	padding: 15px 0 15px 20px;
+}
+header nav.manu nav.submenu_items div:hover{
+	background: #f5f7f9;
+}
+header nav.manu nav.submenu_items div:not(:last-child){
+	border-bottom: 1px solid #e0e0e0;
+}
+main{
+	margin: 0 9% 70px;
+}
+main .slider{
+	position: relative;
+	height: 480px;
+	margin: 20px 0;
+	font-family: 'Bitter', serif;
+}
+main .slider .bg{
+	display: none;
+}
+main .slider .bg.active{
+	display: block;
+	width: 100%;
+	height: 100%;
+	background: url(img/slider1.png) no-repeat;
+    background-size: cover;
+}
+main .slider .bg div{
+	padding-left: 51%;
+	padding-top: 8%; 
+}
+main .slider .bg div h2,
+main .slider .bg div p{
+	padding: 9px;
+	background: rgba(255, 255, 255, 0.65);
+	    width: -webkit-fit-content;
+	    width: -moz-fit-content;
+	    width: fit-content;
+}
+main .slider .bg div h2{ 
+	font-size: 36px;
+	margin-bottom: 20px;
+}
+main .slider .bg div p{ 
+	font-size: 16px;
+	margin:1px;
+	padding-right: 30px;
+}
+main .slider .button{
+	position: absolute;
+	display: flex;
+    align-items: center;
+	padding: 10px;
+    background: #f3f5f6;
+}
+main .slider .button:hover{
+	background: #444444;
+	cursor: pointer;
+}
+main .slider .button.left{
+	top: 45%;
+	left: 0;
+}
+main .slider .button.right{
+	top: 45%;
+	right: 0;
+}
+main .slider .dots{
+	position: absolute;
+	bottom: 20px;
+	right: 15px;
+	display: flex;
+}
+main .slider .dot{
+	width: 10px;
+	height: 10px;
+	margin-left: 5px;
+	background: #3e484b;
+	border: 5px solid #e8f0f2;
+	border-radius: 50%;
+	opacity: 0.6;
+}
+main .slider .dot:hover{
+	cursor: pointer;
+}
+main .slider .dot.active{
+	opacity: 0.9;
+	background: #e8f0f2;
+	border: 5px solid #3e484b;
+}
+main section.block_ad{
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 65px; 
+	font-family: Segoe UI;
+	font-size: 20px;
+	color: #777777;
+}
+main section.block_ad article{
+	display: flex;
+	align-items: center;
+	width: 308px;
+	height: 100px;
+	border: 1px solid #e0e0e0;
+}
+main section.block_ad article .title{
+	font-family: 'Bitter', serif;
+	font-size: 24px;
+	color: #444444;
+}
+main section.block_ad .img{
+	width: 105px;
+    text-align: center;
+}
+main section.products {
+	margin-bottom: 80px;
+}
+main section.products .header{
+	display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #e0e0e0;
+}
+main section.products .header .title,
+main section.products .header .buttons,
+main section.products .header .buttons .button{
+	display: flex;
+    align-items: center;
+}
+main section.products .header .title{
+	font-family: 'Bitter', serif;
+	font-size: 24px;
+	color: #444444;
+}
+main section.products .header .buttons .button{
+	padding: 10px;
+    background: #f3f5f6;
+    margin: 10px 0 10px 10px; 
+}
+main section.products .header .buttons .button:hover{
+	background: #444444;
+	cursor: pointer;
+}
+main section.products .main{
+	margin-top: 40px; 
+	display: flex;
+    justify-content: space-between;
+}
+main section.products .product{
+	position: relative;
+	width: 225px;
+    height: 350px;
+	border: 1px solid #e0e0e0;
+}
+main section.products .product:not(:last-child){
+	margin-right: 23px;
+}
+main section.products .product .sale{
+	display: none;
+}
+main section.products .discount .sale{
+	display: block;
+	position: absolute;
+    top: -8px;
+    left: -14px;
+}
+main section.products .product .picture{
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f7f7f7;
+    padding: 15px 0;
+    margin: 10px;
+    height: 210px;
+}
+main section.products .product .picture img{
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+}
+main section.products .product .title{
+	margin: 0 10px 10px;
+	font-family: 'Bitter', serif;
+	font-size: 13px;
+	color: #777777;
+}
+main section.products .product .info{
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	display: flex;
+	border-top: 1px solid  #e0e0e0;
+}
+main section.products .product .costs{
+	/*46%*/
+    width: 100%;
+    padding-left: 10px;
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+}
+main section.products .product .costs .new{
+	font-family: 'Bitter', serif;
+	font-size: 12px;
+	color: #2e8f9a;
+}
+main section.products .product .costs .old{
+	font-family: Segoe UI;
+	font-size: 11px;
+	color: #777777;
+	text-decoration: line-through;
+}
+main section.products .product .info div:not(.costs){
+	width: 18%;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    border-left: 1px solid  #e0e0e0;
+}
+main section.products .product .info div:not(.costs):hover{
+	background: #f5f7f9;
+	cursor: pointer;
+}
+main section.info{
+	display: flex;
+}
+main section.info article{
+	padding: 20px;
+	padding-bottom: 0; 
+    width: -webkit-fill-available;
+	background: #f5f7f9;
+	font-family: Segoe UI;
+	font-size: 11px;
+	color: #777777;
+}
+main section.info article:not(:last-child){
+	margin-right: 25px;
+}
+main section.info article .title {
+	margin-bottom: 30px; 
+	font-family: 'Bitter', serif;
+	font-size: 18px;
+	color: #444444;
+}
+main section.info article.news div:not(.title){
+	color: #2e8f9a;
+}
+main section.info article div:not(.title) {
+	margin-bottom: 23px; 
+}
+main section.info article .email{
+    position: relative;
+    margin-top: 15px;
+}
+main section.info article .email input{
+	border: 1px solid #cccccc;
+    border-radius: 2px;
+    padding: 10px;
+    padding-right: 20px;
+    display: flex;
+    width: -webkit-fill-available;
+    font-family: Segoe UI;
+    font-size: 12px;
+}
+main section.info article .email img{
+	position: absolute;
+    top: 10px;
+    right: 10px;
+}
+main section.info article div.left img{
+	float: left;
+    margin-right: 15px;
+}
+main section.info article div.left{
+	font-family: 'Bitter', serif;
+}
+footer section{
+	display: flex;
+	justify-content: space-between;
+	padding: 0 9%;
+}
+footer .main{
+	background: url(img/bg1.png) no-repeat;
+	background-size: cover;
+	height: 255px;
+	font-family: Segoe UI;
+    font-size: 12px;
+    color: #777777;
+}
+footer .main article{
+	padding-top: 55px;
+    width: 225px;
+}
+footer .main article {
+    margin-right: 23px;
+}
+footer .main article .title{
+	padding-bottom: 12px;
+    border-bottom: 1px solid;
+    margin-bottom: 25px;
+    font-family: 'Bitter', serif;
+    font-size: 18px;
+    color: #444444;
+}
+footer .main article .icon div{
+	position: relative;
+	margin-bottom: 20px;
+}
+footer .main article .icon img{
+	position: absolute;
+	top: 2px;
+    left: 0;
+}
+footer .main article .icon span{
+	padding-left: 25px;
+}
+footer .main article nav div{
+	margin-bottom: 15px;
+}
+footer .bottom{
+	height: 70px;
+	justify-content: space-between;
+	align-items: center;
+	background: #f9fbfc;
+	padding: 0 9%;
+	font-family: Segoe UI;
+    font-size: 11px;
+    color: #999999;
+}
+footer .bottom img{
+	transition: all 1s;
+	padding: 2px;
+    border-radius: 10px;
+}
+footer .bottom img:hover{
+	cursor: pointer;
+	background: #3098a5;
+}
+div.popUpForm{
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(206, 206, 206, 0.5);
+	z-index: 999; 
+}
+div.popUpForm > div{
+	position: fixed;
+	top: 10%;
+	left: 25%;
+	width: 50%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    background: #f5f7f9;
+    padding: 20px 40px;
+    font-family: 'Bitter', serif;
+    font-size: 18px;
+}
+div.popUpForm form{
+    width: 70%;
+    position: relative;
+}
+div.popUpForm .del{
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    width: 15px;
+    padding: 1%;
+}
+div.popUpForm .del:hover{
+	cursor: pointer;
+}
+div.popUpForm form label {
+    color: rgb(0,0,0);
+    display: block;
+    padding-bottom: 20px;  
+}
+
+div.popUpForm form input{
+    background-color: rgb(255,255,255);
+    border: 1px solid rgb( 186, 186, 186 );
+    border-radius: 2px;
+    margin: 6px 0 12px 0; 
+    width: 90%;
+    padding: 10px;
+    font-family: 'Bitter', serif;
+    font-size: 13px;  
+    transition: all 400ms ease;
+}
+
+div.popUpForm form input:focus{ 
+    border-color: #4195fc;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 8px #4195fc;
+}
+
+div.popUpForm form input:invalid:focus{ 
+    border-color: rgb(248,66,66);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 8px rgb(248,66,66);
+}
+
+div.popUpForm form button {
+    background-color: #59b7c2;
+    border: none;
+    color: rgb(255,255,255);
+    font-family: 'Bitter', serif;
+    font-size: 16px;
+    padding: 10px;
+    transition: all 400ms ease;    
+}
+
+div.popUpForm form button:hover {
+    background-color: #1bc5b3;
+    cursor: pointer;
+}
