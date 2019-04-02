@@ -1,17 +1,17 @@
 // on / off switch
 
 document.addEventListener("click", (event) => {
-	let ButtonsSwitch = event.target;
+	let buttonsSwitch = event.target;
 
-	while(ButtonsSwitch.id !== "switch"){
-		if(ButtonsSwitch === document) break 
-		ButtonsSwitch = ButtonsSwitch.parentNode;
+	while(buttonsSwitch.id !== "switch"){
+		if(buttonsSwitch === document) break 
+		buttonsSwitch = buttonsSwitch.parentNode;
 	}
-	if( ButtonsSwitch.id !== "switch" || 
+	if( buttonsSwitch.id !== "switch" || 
 		event.target.classList.contains("active") || 
-		event.target === ButtonsSwitch ) return
+		event.target === buttonsSwitch ) return
 
-	let divActive = ButtonsSwitch.getElementsByClassName('active')[0];
+	let divActive = buttonsSwitch.getElementsByClassName('active')[0];
 
 	if(!divActive){
 		event.target.classList.add("active"); 
@@ -25,29 +25,29 @@ document.addEventListener("click", (event) => {
 
 //to show cart
 
-const basketId = document.getElementById("basketId");
+const basketElem = document.getElementById("basketId");
 
-basketId.addEventListener("mouseover",(event)=>{
+basketElem.addEventListener("mouseover",(event)=>{
 	let cart = event.target;
 
-	while(cart !== basketId){
+	while(cart !== basketElem){
 		if(cart === document) break 
 		cart = cart.parentNode;
 	}
 
-	if(cart !== basketId)return
+	if(cart !== basketElem)return
 
-	let cartItems = basketId.getElementsByClassName('cart_items')[0];
+	let cartItems = basketElem.getElementsByClassName('cart_items')[0];
 	cartItems.style.display = "block";
 
 	document.addEventListener("mouseout", w ,false);
 	function w (e){
 		cart = e.relatedTarget;
-		while(cart !== basketId){
+		while(cart !== basketElem){
 			if(cart === document) break 
 			cart = cart.parentNode;
 		}
-		if(cart === basketId)return
+		if(cart === basketElem)return
 
 		cartItems.style.display = "none";
 		document.removeEventListener("mouseout", w ,false);
