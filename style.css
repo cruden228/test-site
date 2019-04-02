@@ -190,9 +190,12 @@ header section.bottom nav .basket:hover span{
 	background: #59b7c2;
 	color: white;
 }
+header section.bottom nav .basket:hover .cart_items{
+	display: block;
+}
 .cart_items{
     position: absolute;
-    top: 36px;
+    top: 38px;
     right: 0;
     width: -webkit-max-content;
     width: -moz-max-content;
@@ -287,6 +290,9 @@ header nav.manu > div:not(.active):hover{
 header nav.manu div.active{
 	background: #78c4cd;
 	color: #fff;
+}
+header nav.manu > div:not(.active):hover nav.submenu_items{
+	display: block;
 }
 header nav.manu nav.submenu_items{
 	position: absolute;

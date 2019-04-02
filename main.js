@@ -1,114 +1,60 @@
-//to show cart
-
-const basketElem = document.getElementById("basketId");
-
-basketElem.addEventListener("mouseover",(event)=>{
-	let cart = event.target;
-
-	while(cart !== basketElem){
-		if(cart === document) break 
-		cart = cart.parentNode;
-	}
-
-	if(cart !== basketElem)return
-
-	let cartItems = basketElem.getElementsByClassName('cart_items')[0];
-	cartItems.style.display = "block";
-
-	document.addEventListener("mouseout", w ,false);
-	function w (e){
-		cart = e.relatedTarget;
-		while(cart !== basketElem){
-			if(cart === document) break 
-			cart = cart.parentNode;
-		}
-		if(cart === basketElem)return
-
-		cartItems.style.display = "none";
-		document.removeEventListener("mouseout", w ,false);
-	}
-
-},false);
-
-
-//to show submenu
-
-const submenu = document.getElementById("submenu");
-
-submenu.addEventListener("mouseover",(event)=>{
-	let menuClon = event.target;
-
-	while(menuClon !== submenu){
-		if(menuClon === document) break 
-		menuClon = menuClon.parentNode;
-	}
-
-	if(menuClon !== submenu)return
-
-	let cartItems = submenu.getElementsByClassName('submenu_items')[0];
-	cartItems.style.display = "block";
-
-	document.addEventListener("mouseout", w ,false);
-	function w (e){
-		menuClon = e.relatedTarget;
-		while(menuClon !== submenu){
-			if(menuClon === document) break 
-			menuClon = menuClon.parentNode;
-		}
-		if(menuClon === submenu)return
-
-		cartItems.style.display = "none";
-		document.removeEventListener("mouseout", w ,false);
-	}
-
-},false);
-
-
-//slider switch
+//slider
 
 const slider = document.getElementById("slider");
 const dots = document.getElementById("dots");
 
+function shiftClass(oldElem, newElem){
+	oldElem.classList.remove("active");
+	newElem.classList.add("active");
+}
+
 slider.addEventListener("click", (event) => {
-	const elem = event.target;
-	let ButtonSwitch = elem;
-	while(  ButtonSwitch !== slider &&
+
+	function ButSwitchContains(string){
+		return elemButtonSwitch.classList.contains(string);
+	}
+
+	let elemButtonSwitch = event.target;
+
+	while(  elemButtonSwitch !== slider &&
 			!ButSwitchContains("left") &&
 			!ButSwitchContains("right") &&
-			!ButSwitchContains("dot") ) ButtonSwitch = ButtonSwitch.parentNode;
-	if( ButtonSwitch === slider &&
+			!ButSwitchContains("dot") ) {
+
+		elemButtonSwitch = elemButtonSwitch.parentNode;
+	}
+	if( elemButtonSwitch === slider &&
 		!ButSwitchContains("left") &&
 		!ButSwitchContains("right") &&
 		!ButSwitchContains("dot") ||
 		ButSwitchContains("active")) return
 
-	let divActive = dots.getElementsByClassName('active')[0];
-	if(!divActive && ButSwitchContains("dot")){
-		ButtonSwitch.classList.add("active"); 
+	let elemActive = dots.getElementsByClassName('active')[0];
+
+	if(!elemActive && ButSwitchContains("dot")){
+		elemButtonSwitch.classList.add("active"); 
 		return
 	}
 
 	if(ButSwitchContains("left")){
-		if(!divActive.previousSibling.previousSibling)return
-		shiftClass(divActive, divActive.previousSibling.previousSibling);
+
+		if(!elemActive.previousSibling.previousSibling)return
+
+		shiftClass(elemActive, elemActive.previousSibling.previousSibling);
 	}else if(ButSwitchContains("right")){
-		if(!divActive.nextSibling.nextSibling)return
-		shiftClass(divActive, divActive.nextSibling.nextSibling);
+
+		if(!elemActive.nextSibling.nextSibling)return
+			
+		shiftClass(elemActive, elemActive.nextSibling.nextSibling);
+
 	}else if(ButSwitchContains("dot")){
-		shiftClass(divActive, ButtonSwitch);
+		shiftClass(elemActive, elemButtonSwitch);
 	}
 
-	function shiftClass(oldElem, newElem){
-		oldElem.classList.remove("active");
-		newElem.classList.add("active");
-	}
-	function ButSwitchContains(string){
-		return ButtonSwitch.classList.contains(string);
-	}
 },false);
 
-//to show create Account
-console.log();
+//to show form "create Account"
+
 const createAccount = document.getElementById("createAccount");
 
 createAccount.addEventListener("click", (event) => {
