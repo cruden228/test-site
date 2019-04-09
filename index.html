@@ -2,448 +2,235 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-secale=1.0"/>
 	<title>Test work</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
 	<link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+	<link rel="stylesheet" type="text/css" href="style.css">
+
 </head>
 <body>
-	<header>
-		<div>
-			<div class="line"></div>
-		</div>
-		<section class="top">
-			<article>
-				<article class="header_call">
-					<img src="icon/Phone.png">
-					<div>Call Us +777 (100) 1234</div>
-				</article>
-				<article id="createAccount">
-					<div>Welcome visitor you can <a>login</a> or <a>create an account</a>.</div>
-				</article>
-			</article>
-			<div>
-				<form>
-					<input type="radio" id="EN" name="language-group" checked>
-					<label for="EN">EN</label>
-					<input type="radio" id="FR" name="language-group">
-					<label for="FR">FR</label>
-					<input type="radio" id="GM" name="language-group">
-					<label for="GM">GM</label>
-				</form>
-				<form>
-					<input type="radio" id="$" name="currency-group" checked>
-					<label for="$">$</label>
-					<input type="radio" id="€" name="currency-group">
-					<label for="€">€</label>
-					<input type="radio" id="£" name="currency-group">
-					<label for="£">£</label>
-				</form>
-			</div>
-		</section>
-		<section class="bottom">
-			<article>
-				<article class="logo">
-					<img src="logo.png">
-					<div>Online Store Theme</div>
-				</article>
-				<article>
-					<div class="search">
-						<input type="text" name="search" placeholder="Search entire store here..."/>
-						<img src="icon/Search.png"/>
-					</div>
-				</article>
-			</article>
-			<nav>
-				<div><span>My Account</span></div>
-				<div><span>My Wishlist</span></div>
-				<div><span>Log In</span></div>
-				<div><span>Sign Up</span></div>
-				<div id="menuBasket" class="basket">
-					<span><img src="icon/cart.png">
-					 	Cart $0.00
-					</span>
-					 <div style="" class="cart_items">
-					 	<div class="header">Recently added item(s)</div>
-					 	<div class="main">
-					 		<div class="product_cart">
-					 			<div class="img"><img src="img/minImg1.png"></div>
-					 			<div class="info">
-					 				<div class="title">Faddywax Fragrance Diffuser  Set Gardenia</div>
-					 				<div class="cost">1 x $399.00</div>
-					 				<div class="del"><img src="icon/del.png"></div>
-					 			</div>
-					 		</div>
-					 		<div class="product_cart">
-					 			<div class="img"><img src="img/minImg2.png"></div>
-					 			<div class="info">
-					 				<div class="title">Caldrea Linen and Room Spray</div>
-					 				<div class="cost">1 x $123.00</div>
-					 				<div class="del"><img src="icon/del.png"></div>
-					 			</div>
-					 		</div>
-					 	</div>
-					 	<div class="footer">
-					 		<button>View shopping cart</button>
-					 		<button>Proceed to Checkout</button>
-					 	</div>
-					 </div>
+	<header class="header">
+
+		<div class="topbar header__topbar">
+
+			<div class="info-welcome topbar__text">
+
+				<div class="phone-number info-welcome__phone">
+					<img class="phone-number__icon" alt="phone" src="icon/Phone.png">
+					<span class="phone-number__text">Call Us +777 (100) 1234</span>
 				</div>
-			</nav>
-		</section>
-		<nav class="manu">
-			<div class="active">
-				<span>Home</span>
+
+				<div class="welcome info-welcome__login">
+					<span class="welcome__text">Welcome visitor you can <a href="#" class="welcome__link">login</a> or <a href="#" class="welcome__link">create an account</a>.</span>
+				</div>
+
 			</div>
-			<div>
-				<span>Solids</span>
+
+			<div class="switcher topbar__switcher">
+
+				<form class="form-switcher switcher__language">
+					<input id="EN" type="radio" class="form-switcher__input form-switcher__input_hidden" name="language-group" checked>
+					<label for="EN" class="form-switcher__lable">EN</label>
+
+					<input id="FR" type="radio" class="form-switcher__input form-switcher__input_hidden" name="language-group">
+					<label for="FR" class="form-switcher__lable">FR</label>
+
+					<input id="GM" type="radio" class="form-switcher__input form-switcher__input_hidden" name="language-group">
+					<label for="GM" class="form-switcher__lable">GM</label>
+				</form>
+
+				<form class="form-switcher switcher__language">
+					<input id="$" type="radio" class="form-switcher__input form-switcher__input_hidden" name="currency-group" checked>
+					<label for="$" class="form-switcher__lable">$</label>
+
+					<input id="€" type="radio" class="form-switcher__input form-switcher__input_hidden" name="currency-group">
+					<label for="€" class="form-switcher__lable">€</label>
+
+					<input id="£" type="radio" class="form-switcher__input form-switcher__input_hidden" name="currency-group">
+					<label for="£" class="form-switcher__lable">£</label>
+				</form>
+
 			</div>
-			<div>
-				<span>Liquids</span>
+
+		</div>
+
+		<div class="middlebar header__middlebar">
+
+			<div class="bar-item middlebar__bar-item">
+
+				<div class="logo bar-item__logo">
+					<img class="logo__img" alt="logotype" src="logo.png">
+					<span class="logo__text">Online Store Theme</span>
+				</div>
+
+				<form class="form-search bar-item__form-search">
+					<input class="form-search__input" type="text" name="search" placeholder="Search entire store here..."/>
+				</form>
+
 			</div>
-			<div id="submenu">
-				<span>Spray</span>
-				<nav class="submenu_items">
-					<div>For home</div>
-					<div>For Garden</div>
-					<div>For car</div>
-					<div>Other spray</div>
-				</nav>
+
+			<div class="bar-item middlebar__bar-item">
+
+				<ul id="user-menu" class="user-menu bar-item__user-menu">
+					<li class="user-menu-item user-menu__item">
+						<span class="user-menu-item__span">My Account</span>
+					</li>
+					<li class="user-menu-item user-menu__item">
+						<span class="user-menu-item__span">My Wishlist</span>
+					</li>
+					<li class="user-menu-item user-menu__item user-login">
+						<span class="user-menu-item__span">Log In</span>
+					</li>
+					<li class="user-menu-item user-menu__item user-login">
+						<span class="user-menu-item__span user-menu-item__span_border-right_hidden">Sign Up</span>
+					</li>
+				</ul>
+
+				<div class="item-basket bar-item__basket">
+					<img class="item-basket__icon" alt="basket" src="icon/cart.png">
+					<span class="item-basket__span">Cart $0.00</span>
+
+					<div class="cart-items item-basket__cart-items">
+
+					 	<div class="cart-header cart-items__cart-header">
+					 		<span class="cart-header__span">Recently added item(s)</span>
+					 	</div>
+
+					 	<div class="main-cart cart-items__main-cart">
+
+					 		<div class="cart-product main-cart__cart-product">
+
+					 			<div class="place-photo cart-product__photo-product">
+					 				<img class="photo-product__img" alt="product" src="img/minImg1.png">
+					 			</div>
+
+					 			<div class="info-product cart-product__info-product">
+					 				<span class="info-product__title">Faddywax Fragrance Diffuser  Set Gardenia</span>
+					 				<span class="info-product__cost">1 x $399.00</span>
+
+					 				<button class="button-del-product info-product__button-del-product">
+					 					<img class="button-del-product__icon" alt="delit" src="icon/del.png">
+					 				</button>
+
+					 			</div>
+
+					 		</div>
+
+							<div class="cart-product main-cart__cart-product">
+
+					 			<div class="place-photo cart-product__photo-product">
+					 				<img class="photo-product__img" alt="product" src="img/minImg2.png">
+					 			</div>
+
+					 			<div class="info-product cart-product__info-product">
+					 				<span class="info-product__title">Caldrea Linen and Room Spray</span>
+					 				<span class="info-product__cost">1 x $123.00</span>
+
+					 				<button class="button-del-product info-product__button-del-product">
+					 					<img class="button-del-product__icon" alt="delit" src="icon/del.png">
+					 				</button>
+					 			</div>
+
+					 		</div>
+
+					 	</div>
+
+					 	<div class="footer-cart cart-items__footer-cart">
+					 		<button class="footer-cart__button-view-cart">View shopping cart</button>
+					 		<button class="footer-cart__button-checkout">Proceed to Checkout</button>
+					 	</div>
+					</div>
+
+				</div>
+
 			</div>
-			<div>
-				<span>Electric</span>
+
+		</div>
+
+		<ul class="main-menu header__main-menu">
+
+			<li class="main-menu__item main-menu__item_active">Home</li>
+			<li class="main-menu__item">Solids</li>
+			<li class="main-menu__item">Liquids</li>
+
+			<li class="main-submenu main-menu__item">
+				<span class="main-submenu__span">Spray</span>
+
+				<ul class="main-menu-submenu main-submenu__submenu">
+					<li class="main-menu-submenu__item">For home</li>
+					<li class="main-menu-submenu__item">For Garden</li>
+					<li class="main-menu-submenu__item">For car</li>
+					<li class="main-menu-submenu__item">Other spray</li>
+				</ul>
+
+			</li>
+
+			<li class="main-menu__item">Electric</li>
+			<li class="main-menu__item">For car</li>
+
+		</ul>
+		
+		<div class="main-slider header__slider">
+
+			<div class="slide-main-slider">
+				<div class="text-block-slider slide-main-slider__text">
+					<h2 class="text-block-slider__title">Breeze Noticeables</h2>
+					<p class="text-block-slider__content">The new series of natural air fresheners.</p> 
+					<p class="text-block-slider__content">Febreze Noticeables Meadows & Rain </p>
+					<p class="text-block-slider__content">Air Freshener Refill.</p>
+				</div>
 			</div>
-			<div>
-				<span>For car</span>
+			<div class="slide-main-slider">
+				<div class="text-block-slider slide-main-slider__text">
+					<h2 class="text-block-slider__title">Breeze Noticeables</h2>
+					<p class="text-block-slider__content">The new series of natural air fresheners.</p> 
+					<p class="text-block-slider__content">Febreze Noticeables Meadows & Rain </p>
+					<p class="text-block-slider__content">Air Freshener Refill.</p>
+				</div>
 			</div>
-		</nav>
+			<div class="slide-main-slider main-slider__slide main-slider__slide_active">
+				<div class="text-block-slider slide-main-slider__text">
+					<h2 class="text-block-slider__title">Breeze Noticeables</h2>
+					<p class="text-block-slider__content">The new series of natural air fresheners.</p> 
+					<p class="text-block-slider__content">Febreze Noticeables Meadows & Rain </p>
+					<p class="text-block-slider__content">Air Freshener Refill.</p>
+				</div>
+			</div>
+
+		</div>
+
 	</header>
-	<main>
-		<div id="slider" class="slider">
-			<div class="button left"><img src="icon/leftButton.png"/></div>
-			<div class="button right"><img src="icon/right.png"/></div>
-			<div id="dots" class="dots">
-				<div class="dot active"></div>
-				<div class="dot"></div>
-				<div class="dot"></div>
+
+
+	<div class="popUp-window popUp-window_hidden">
+
+		<form class="form-login popUp-window__form">
+
+            <label class="user-label form-login__label" for="useremail">
+                <span class="user-label__title">Username:</span>
+                <input class="user-label__input" type="email" name="useremail" id="useremail" placeholder="Useremail must be between 8 and 20 characters">
+            </label>
+
+            <label class="user-label form-login__label" for="password">
+                <span class="user-label__title">Password:</span>
+                <input class="user-label__input" type="password" name="password" id="password" placeholder="Password must contain 1 uppercase, lowercase and number" required />
+            </label>
+
+            <button class="form-login__button-sign-in" type="submit">Sign in</button>
+
+			<div id="delForm" class="button-del-form form-login__del">
+				<img class="button-del-form__icon" alt="delit" src="icon/del.png">
 			</div>
-			<div class="bg active">
-				<div>
-					<h2>Breeze Noticeables</h2>
-					<p>The new series of natural air fresheners.</p> 
-					<p>Febreze Noticeables Meadows & Rain </p>
-					<p>Air Freshener Refill.</p>
-				</div>
-			</div>
 
+    	</form>
 
-		</div>
-		<section class="block_ad">
-			<article>
-				<div class="img"><img src="img/Best_price.png"></div>
-				<div>
-					<div class="title">Best price </div>
-					<div>this week</div>
-				</div>
-			</article>
-			<article>
-				<div class="img"><img src="img/New_smells.png"></div>
-				<div>
-					<div class="title">New smells</div>
-					<div>in the next series</div>
-				</div>
-			</article>
-			<article>
-				<div class="img"><img src="img/only_natural.png"></div>
-				<div>
-					<div class="title">Only natural</div>
-					<div>air fresheners</div>
-				</div>
-			</article>
-		</section>
-
-
-		<section class="products">
-			<article class="header">
-				<div class="title">Best Sellers</div>
-				<div class="buttons">
-					<div class="button"><img src="icon/leftButton.png"/></div>
-					<div class="button"><img src="icon/right.png"/></div>
-				</div>
-			</article>
-			<article class="main">
-
-				<div class="product discount">
-					<img class="sale" src="icon/SALE.png">
-					<div class="picture">
-						<img src="img/img1.png">
-					</div>
-					<div class="title">Febreze Air Effects New Zealand Springs</div>
-					<div class="info">
-						<div class="costs">
-							<span class="new">$550.00</span>
-							<span class="old">$725.00</span>
-						</div>
-						<div><img src="icon/transfer.png" alt=""></div>
-						<div><img src="icon/heart.png" alt=""></div>
-						<div><img src="icon/bascetAdd.png" alt=""></div>
-					</div>
-				</div>
-
-				<div class="product">
-					<img class="sale" src="icon/SALE.png">
-					<div class="picture">
-						<img src="img/img2.png">
-					</div>
-					<div class="title">Febreze Noticeables 2 Refills</div>
-					<div class="info">
-						<div class="costs">
-							<span class="new">$399.00</span>
-							<!-- <span class="old">$725.00</span> -->
-						</div>
-						<div><img src="icon/transfer.png" alt=""></div>
-						<div><img src="icon/heart.png" alt=""></div>
-						<div><img src="icon/bascetAdd.png" alt=""></div>
-					</div>
-				</div>
-
-				<div class="product discount">
-					<img class="sale" src="icon/SALE.png">
-					<div class="picture">
-						<img src="img/img3.png">
-					</div>
-					<div class="title">Beanpod Candles Orange Vanilla, Tea Light</div>
-					<div class="info">
-						<div class="costs">
-							<span class="new">$330.00</span>
-							<span class="old">$499.00</span>
-						</div>
-						<div><img src="icon/transfer.png" alt=""></div>
-						<div><img src="icon/heart.png" alt=""></div>
-						<div><img src="icon/bascetAdd.png" alt=""></div>
-					</div>
-				</div>
-
-				<div class="product">
-					<img class="sale" src="icon/SALE.png">
-					<div class="picture">
-						<img src="img/img4.png">
-					</div>
-					<div class="title">Linen & Sky Air Freshener Refill</div>
-					<div class="info">
-						<div class="costs">
-							<span class="new">$173.00</span>
-							<!-- <span class="old">$725.00</span> -->
-						</div>
-						<div><img src="icon/transfer.png" alt=""></div>
-						<div><img src="icon/heart.png" alt=""></div>
-						<div><img src="icon/bascetAdd.png" alt=""></div>
-					</div>
-				</div>
-			</article>
-		</section>
-
-
-		<section class="products">
-			<article class="header">
-				<div class="title">Featured Products</div>
-				<div class="buttons">
-					<div class="button"><img src="icon/leftButton.png"/></div>
-					<div class="button"><img src="icon/right.png"/></div>
-				</div>
-			</article>
-			<article class="main">
-
-				<div class="product discount">
-					<img class="sale" src="icon/SALE.png">
-					<div class="picture">
-						<img src="img/img5.png">
-					</div>
-					<div class="title">Air Wick Scented Oil Warmer</div>
-					<div class="info">
-						<div class="costs">
-							<span class="new">$250.00</span>
-							<span class="old">$325.00</span>
-						</div>
-						<div><img src="icon/transfer.png" alt=""></div>
-						<div><img src="icon/heart.png" alt=""></div>
-						<div><img src="icon/bascetAdd.png" alt=""></div>
-					</div>
-				</div>
-
-				<div class="product">
-					<img class="sale" src="icon/SALE.png">
-					<div class="picture">
-						<img src="img/img6.png">
-					</div>
-					<div class="title">Freshmatic Ultra Automatic Spray Starter Kit</div>
-					<div class="info">
-						<div class="costs">
-							<span class="new">$177.00</span>
-							<!-- <span class="old">$725.00</span> -->
-						</div>
-						<div><img src="icon/transfer.png" alt=""></div>
-						<div><img src="icon/heart.png" alt=""></div>
-						<div><img src="icon/bascetAdd.png" alt=""></div>
-					</div>
-				</div>
-
-				<div class="product discount">
-					<img class="sale" src="icon/SALE.png">
-					<div class="picture">
-						<img src="img/img7.png">
-					</div>
-					<div class="title">Home Luminary Refills Anjou Pear Spice</div>
-					<div class="info">
-						<div class="costs">
-							<span class="new">$143.00</span>
-							<span class="old">$250.00</span>
-						</div>
-						<div><img src="icon/transfer.png" alt=""></div>
-						<div><img src="icon/heart.png" alt=""></div>
-						<div><img src="icon/bascetAdd.png" alt=""></div>
-					</div>
-				</div>
-
-				<div class="product">
-					<img class="sale" src="icon/SALE.png">
-					<div class="picture">
-						<img src="img/img8.png">
-					</div>
-					<div class="title">Paddywax Fragrance Diffuser Set, Gardenia Tuberose</div>
-					<div class="info">
-						<div class="costs">
-							<span class="new">$173.00</span>
-							<!-- <span class="old">$725.00</span> -->
-						</div>
-						<div><img src="icon/transfer.png" alt=""></div>
-						<div><img src="icon/heart.png" alt=""></div>
-						<div><img src="icon/bascetAdd.png" alt=""></div>
-					</div>
-				</div>
-			</article>
-		</section>
-
-
-		<section class="info">
-			<article>
-				<div class="title">About Us</div>
-				<div>
-					Lorem ipsum, libero et luctus molestie, turpis mi sagittis nisl, a scelerisque leo nulla et lectus pendisse dictum posuere elit, in congue nisl varius quis lentesque a tellus eget quam varius aliquet.
-				</div>
-				<div>
-					Pellentesque tristique, libero et luctus molestie, turpis mi sagittis nisl, a scelerisque leo nulla et lectus pendisse dictum posuere elit, in congue nisl varius quis lentesque a tellus eget quam varius aliquet.
-				</div>
-				<div>
-					Vel lobortis gravida. Cursus in dapibus ultrices velit fusce. Felis lacus erat. 
-				</div>
-			</article>
-
-			<article class="news">
-				<div class="title">News</div>
-				<i>3 january 2012</i>
-				<div>
-					Fermentum parturient lacus tristique habitant nullam morbi et odio nibh mus dictum tellus erat.
-				</div>
-				<i>2 january 2012</i>
-				<div>
-					Cras ac hendrerit dui. Duis lacus ligula, luctus ac tristique eget, posuere id erat.
-				</div>
-				<i>1 january 2012</i>
-				<div>
-					Lorem ipsum, libero et luctus molestie, turpis mi sagittis nisl, a scelerisque leo nulla et lectus pendisse dictum posuere 
-				</div>
-			</article>
-			<article>
-				<div class="title">Newsletter</div>
-				<div>
-					Cursus in dapibus ultrices velit fusce. Felis lacus erat. Fermentum parturient lacus tristique habitant nullam morbi et odio nibh mus dictum tellus erat.
-				</div>
-				<div class="email">
-					<input type="email" name="email" placeholder="Search entire store here...">
-					<img src="icon/right.png">
-				</div>
-				<div class="left">
-					<img src="icon/email_open.png">
-					<i>Vel lobortis gravida. Cursus in dapibus ultrices velit fusce. Felis lacus erat. </i>
-				</div>
-			</article>
-		</section>
-	</main>
-	<footer>
-		<section class="main">
-			<article>
-				<div class="title">Contact Us</div>
-				<div class="icon">
-					<div>
-						<img src="icon/pin.png">
-						<span>49 Archdale, 2B Charleston</span>
-					</div>
-					<div>
-						<img src="icon/Phone.png">
-						<span>+777 (100) 1234</span>
-					</div>
-					<div>
-						<img src="icon/Email.png">
-						<span>mail@example.com</span>
-					</div>
-				</div>
-			</article>
-			<article>
-				<div class="title">Information</div>
-				<nav>
-					<div>About Us</div>
-					<div>Privacy Policy</div>
-					<div>Terms & Conditions</div>
-					<div>Secure payment</div>
-				</nav>
-			</article>
-			<article>
-				<div class="title">Costumer Service</div>
-				<nav>
-					<div>Contact Us</div>
-					<div>Return</div>
-					<div>FAQ</div>
-					<div>Site Map</div>
-				</nav>
-			</article>
-			<article>
-				<div class="title">My Account</div>
-				<nav>
-					<div>My Account</div>
-					<div>Order History</div>
-					<div>Wish List</div>
-					<div>Newsletter</div>
-				</nav>
-			</article>
-		</section>
-		<section class="bottom">
-			<article>© Breeze Store Theme, 2012</article>
-			<article>
-				<img src="icon/facebook.png" alt="">
-				<img src="icon/twitter.png" alt="">
-				<img src="icon/google.png" alt="">
-			</article>
-		</section>
-	</footer>
-
-	<div class="popUpForm">
-		<div>
-			<img id="delForm" class="del" src="icon/del.png">
-	        <form>
-	            <label for="useremail">
-	                Username:
-	                <input type="email" name="email" placeholder="Useremail must be between 8 and 20 characters">
-	            </label>
-	            <label for="password">
-	                Password:
-	                <input type="password" name="password" id="password" placeholder="Password must contain 1 uppercase, lowercase and number" pattern="(?=^.{8,}$)((?=.*d)|(?=.*W+))(?![.n])(?=.*[A-Z])(?=.*[a-z]).*$" required />
-	            </label>
-	            <button type="submit">Sign in</button>
-	        </form>
-    	</div>
     </div>
-
-
+	<script
+	  src="http://code.jquery.com/jquery-3.3.1.js"
+	  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+	  crossorigin="anonymous"></script>
+	<script type="text/javascript" src="slick/slick.min.js"></script>
 	<script type="text/javascript" src="main.js"></script>
 </body>
 </html>
